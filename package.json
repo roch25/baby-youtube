@@ -1,0 +1,10 @@
+{
+  "name": "yt-vue-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rochelle",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^1.0.0-rc.6"
+  }
+}
