@@ -1,5 +1,5 @@
 <template>
-  <app-header/>
+  <app-header logo="./images/logo.png" label='YouTube' />
 </template>
 
 <script>
