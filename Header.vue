@@ -4,8 +4,9 @@
             <img :src="logo" alt="logo">
             <div> {{label}} </div>
         </div>
-        <div class="searchbox">
-
+        <div class="search-container">
+             <input class="searchbar" type="text">
+             <i class="fa fa-search searchicon" aria-hidden="true" title="Search"></i>
         </div>
     </div>
 </template>
@@ -24,19 +25,53 @@ export default {
 </script>
 
 <style>
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    margin: 2vw;
+    width: 65vw;
+    align-items: center;
+}
+
 .logo {
     display: flex;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 4.5vmin;
+    justify-content: space-around;
 }
 
 img {
     max-width: 30%;
-    width: 9vh;
-    height: 6vmin;
+    width: 8vw;
+    height: 6vh;
 }
 
-.logo {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 4.5vmin;
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 30vw;
+    border-radius: 15px;
+    border: 3px solid silver;
+}
+
+.search-container:hover{
+  box-shadow: 1px 1px 2px 1px silver;
+}
+
+.searchbar {
+    height: 5vh;
+    width: 25.8vw;
+    margin: 1vw 2vw;
+    border: none;
+    outline: none;
+    font-size: 3vmin;
+}
+
+.searchicon {
+    cursor: pointer;
+    position: relative;
+    width: 3.2vw;
 }
 
 </style>
