@@ -56,13 +56,13 @@ img {
 }
 
 .search-container:hover{
-  box-shadow: 1px 1px 2px 1px silver;
+  box-shadow: 1px 1px 2px 1px rgb(122, 122, 122);
 }
 
 .searchbar {
-    height: 5vh;
+    height: 3vh;
     width: 25.8vw;
-    margin: 1vw 2vw;
+    margin: 0.75vw;
     border: none;
     outline: none;
     font-size: 3vmin;
