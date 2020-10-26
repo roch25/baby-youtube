@@ -71,7 +71,10 @@ img {
 .searchicon {
     cursor: pointer;
     position: relative;
-    width: 3.2vw;
+}
+
+.searchicon:hover {
+    transform: scale(1.2);
 }
 
 </style>
