@@ -1,5 +1,5 @@
 <template>
-  <app-header logo="./images/logo.png" label='YouTube' />
+  <app-header logo="./images/logo.png" label='YouTube' @onClickSearch="fetchSearchList"/>
 </template>
 
 <script>
@@ -7,6 +7,11 @@ import AppHeader from './Header.vue'
 export default {
     components : {
         AppHeader
+    },
+    methods:{
+        fetchSearchList(query){
+            console.log(query + "from app");
+        }
     }
 
 }
