@@ -3,7 +3,7 @@
         <app-header logo="./images/logo.png" label='YouTube' @onClickSearch="fetchSearchList"/>
         <div class="body">
              <!-- video player, hidden initially -->
-            <list/>
+            <list />
         </div>
     </div>
 </template>
@@ -19,7 +19,7 @@ export default {
     },
     data(){
         return{
-            searchList: []
+            searchResults: []
         }
     },
     methods:{
@@ -27,7 +27,7 @@ export default {
             key = key.replace(/[;]/g, "") // fix
             const response = await fetch(url+"/search?key="+key+"&q="+query+"&part=snippet&type=video&maxResults=10");
             const data = await response.json();
-            this.searchList = data.items
+            this.searchResults = data.items
         }
     }
 }
