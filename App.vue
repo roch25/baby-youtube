@@ -13,8 +13,12 @@ import AppHeader from './Header.vue'
 import List from './List.vue'
 export default {
     components : {
-        AppHeader,
-        List
+        AppHeader
+    },
+    methods:{
+        fetchSearchList(query){
+            console.log(query + "from app");
+        }
     }
 }
 </script>

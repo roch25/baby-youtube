@@ -5,8 +5,14 @@
             <div> {{label}} </div>
         </div>
         <div class="search-container">
-             <input class="searchbar" type="text">
-             <i class="fa fa-search searchicon" aria-hidden="true" title="Search"></i>
+             <input class="searchbar" type="text" @input="getInputTextOnClick">
+             <i 
+                class="fa fa-search searchicon" 
+                aria-hidden="true" 
+                title="Search"
+                @click="sendSearchQuery"
+            >
+            </i>
         </div>
     </div>
 </template>
@@ -21,6 +27,19 @@ export default {
             type: String
         }
     },
+    data(){
+        return {
+            searchStr: ''
+        }
+    },
+    methods:{
+        getInputTextOnClick($evt){
+            this.searchStr = $evt.target.value
+        },
+        sendSearchQuery(){
+            this.$emit('onClickSearch', this.searchStr)
+        }
+    }
 }
 </script>
 
