@@ -3,7 +3,7 @@
         <app-header logo="./images/logo.png" label='YouTube' @onClickSearch="fetchSearchList"/>
         <div class="body">
              <!-- video player, hidden initially -->
-            <list />
+            <list :searchResults="searchResults"/>
         </div>
     </div>
 </template>
@@ -15,7 +15,8 @@ let key = import.meta.env.VITE_API_KEY
 const url = "https://www.googleapis.com/youtube/v3";
 export default {
     components : {
-        AppHeader
+        AppHeader,
+        List
     },
     data(){
         return{
