@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-      <list-item v-for="item in searchResults" :key="item.id.videoId">
+      <list-item v-for="item in searchResults" :key="item.id.videoId" @click="selected(item)">
            <template v-slot:image>
                 <img :src="item.snippet.thumbnails.medium.url"/>
             </template>
@@ -27,9 +27,17 @@ export default {
     },
     components:{
         ListItem
+    },
+    methods:{
+        selected(videoPayload){
+            this.$emit('videoSelected', videoPayload)
+        }
     }
 }
 </script>
 
 <style scoped>
+.list{
+    margin: 2.5vmin;
+}
 </style>
