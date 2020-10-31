@@ -1,7 +1,10 @@
 <template>
   <div class="list">
-      <list-item v-for="item in searchResults" :key="item.id.videoId" @click="selected(item)">
-           <template v-slot:image>
+      <list-item 
+        v-for="item in searchResults" 
+        :key="item.id.videoId" 
+        @click="selected(item)">
+            <template v-slot:image>
                 <img :src="item.snippet.thumbnails.medium.url"/>
             </template>
             <template v-slot:title>

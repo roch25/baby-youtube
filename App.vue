@@ -43,12 +43,12 @@ export default {
 </script>
 
 <style>
-    * {
-        color: white;
-        background-color: rgb(36, 36, 36);
-    }
+* {
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
 
-    .body {
-        display: flex;
-    }
+.body {
+    display: flex;
+}
 </style>
