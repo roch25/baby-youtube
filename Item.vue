@@ -23,15 +23,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .item {
         display: flex;
-        margin: 20px;
+        margin: 0;
         cursor: pointer;
         border-bottom: 1px solid silver;
         padding: 10px;
         font-family: Arial, Helvetica, sans-serif;
-        max-width: 65%;
+        width: 100%;
     }
     .right {
         margin-left: 15px;
@@ -39,12 +39,12 @@ export default {
         flex-direction: column;
     }
     .title{
-        font-size: 4.2vmin;
+        font-size: 3.8vmin;
         justify-self: flex-start;
         font-weight: 700;
     }
     .channel{
-        font-size: 3.8vmin;
+        font-size: 3.6vmin;
         justify-self: left;
         margin-top: 12px;
     }
