@@ -14,6 +14,7 @@ import VideoPlayer from './Video.vue';
 import List from './List.vue'
 let key = import.meta.env.VITE_API_KEY
 const url = "https://www.googleapis.com/youtube/v3";
+const urlEmb = 'https://www.youtube.com/embed/'
 export default {
     components : {
         AppHeader,
@@ -23,7 +24,7 @@ export default {
     data(){
         return{
             searchResults: [],
-            selectedVideoId: 'https://www.youtube.com/embed/',
+            selectedVideoId: urlEmb,
             showVideo: false
         }
     },
@@ -32,10 +33,15 @@ export default {
             key = key.replace(/[;]/g, "") // fix
             const response = await fetch(url+"/search?key="+key+"&q="+query+"&part=snippet&type=video&maxResults=10");
             const data = await response.json();
-            this.searchResults = data.items
+            this.searchResults = data.items.map(item => ({
+                videoId: item.id.videoId,
+                thumbnail: item.snippet.thumbnails.medium.url,
+                channelName: item.snippet.channelTitle,
+                description: item.snippet.description,
+            }))
         },
         getSelectedVideo(payload){
-            this.selectedVideoId = this.selectedVideoId.concat(payload.id.videoId);
+            this.selectedVideoId = this.selectedVideoId+payload.videoId;
             this.showVideo = true
         }
     }

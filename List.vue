@@ -2,19 +2,19 @@
   <div class="list">
       <list-item 
         v-for="item in searchResults" 
-        :key="item.id.videoId" 
+        :key="item.videoId" 
         @click="selected(item)">
             <template v-slot:image>
-                <img :src="item.snippet.thumbnails.medium.url"/>
+                <img :src="item.thumbnail"/>
             </template>
             <template v-slot:title>
-                {{item.snippet.title}}
+                {{item.title}}
             </template>
             <template v-slot:channel>
-                {{item.snippet.channelTitle}}
+                {{item.channelTitle}}
             </template>
              <template v-slot:description>
-                {{item.snippet.description}}
+                {{item.description}}
             </template>
       </list-item>
   </div>
