@@ -35,8 +35,9 @@ export default {
             const data = await response.json();
             this.searchResults = data.items.map(item => ({
                 videoId: item.id.videoId,
+                title: item.snippet.title,
                 thumbnail: item.snippet.thumbnails.medium.url,
-                channelName: item.snippet.channelTitle,
+                channelTitle: item.snippet.channelTitle,
                 description: item.snippet.description,
             }))
         },
