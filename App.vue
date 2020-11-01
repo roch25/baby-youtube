@@ -30,7 +30,7 @@ export default {
     },
     methods:{
         async fetchSearchList(query){
-            key = key.replace(/[;]/g, "") // fix
+            key.slice(0, -1)
             const response = await fetch(url+"/search?key="+key+"&q="+query+"&part=snippet&type=video&maxResults=10");
             const data = await response.json();
             this.searchResults = data.items.map(item => ({
